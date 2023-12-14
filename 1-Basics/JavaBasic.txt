@@ -1,0 +1,28 @@
+Older version : Opensource by Redhat
+java 8 - C:\Program Files\RedHat\java-1.8.0-openjdk-1.8.0.362-1\bin\java.exe
+
+New version : by Oracle
+Java 17 - C:\Program Files\Java\jdk-17\bin\java.exe
+
+Go to JAVA PROJECTS at bottom of file explorer
+Right click on your project> configure class path > Configure JAVA runtime > Choose version
+
+0. Data types and Memory Space
+1. Basic
+2. Conditional
+3. Control Flow
+4. Type Casting
+5. Auto Boxing and Unboxing
+6. Enum
+7. String (Read page 58 of the guide)
+8. Print Formatting / String Formatting
+9. Generics (POJO class + Abstract class + Array List Collection)
+10. AutoBoxUnboxEx (Need Generics)
+11. GenericsEx is Advanced Generics
+
+
+* In Java, instance variables and local variables are two different types of variables that serve different purposes.
+
+Instance variables are declared inside a class, but outside any method or constructor, and are associated with instances of the class. Each instance of the class has its own copy of the instance variables. Instance variables are used to represent the state of an object, and can be accessed and modified by the methods of the object. Instance variables are initialized to default values when an object is created, unless they are explicitly initialized by a constructor or an initializer block.
+Local variables, on the other hand, are declared inside a method or a block of code, and are only visible within that method or block. Local variables are used to store temporary data that is needed only within a specific method or block, and are not associated with any particular instance of a class. Local variables must be initialized before they are used, and their scope is limited to the block in which they are declared.
+In summary, instance variables are associated with instances of a class and represent the state of an object, while local variables are declared inside a method or block and are used to store temporary data needed within that method or block.

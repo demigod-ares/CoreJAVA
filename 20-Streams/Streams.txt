@@ -1,0 +1,46 @@
+What is a stream? Streams introduces Functional Programming in JAVA.
+A stream is a sequence of elements that can be processed in parallel or sequentially. It is a lightweight and efficient way to perform operations on collections of data.
+
+How to create a stream?
+You can create a stream from any collection in Java by calling the .stream() method on the collection. For example:
+
+Operations on streams
+Streams provide two types of operations: 
+1. intermediate operations 
+2. terminal operations.
+
+Intermediate operations return a new stream that can be used in a chain with other operations
+while terminal operations produce a result or a side effect.
+
+Here are some examples of intermediate operations:
+    filter(Predicate<T> predicate): filters the stream based on a predicate.
+    map(Function<T, R> mapper): transforms each element of the stream using a mapping function.
+    sorted(): sorts the elements of the stream.
+    distinct(): removes duplicates from the stream.
+    limit(long maxSize): limits the stream to a certain number of elements.
+    skip(long n): skips the first n elements of the stream.
+    peek(): allows peeking at the elements in a stream as they are passing through, without affecting the stream itself
+
+And here are some examples of terminal operations:
+    forEach(Consumer<T> action): performs an action on each element of the stream.
+    count(): returns the number of elements in the stream.
+    collect(Collector<T, A, R> collector): collects the elements of the stream into a collection using a collector.
+    reduce(): applies the BinaryOperator to the first two elements of the stream, then applies it to the result and the next element, and so on, until all elements are processed.
+
+peek() vs forEach()
+1. Execution Time:
+The peek() method is executed as an intermediate operation while the stream is being processed,
+whereas forEach() method is executed as a terminal operation after the stream processing is complete.
+2. Return Value:
+The peek() method returns a new stream containing the same elements as the original stream,
+while the forEach() method returns void.
+3. Functionality:
+The peek() method allows you to peek at the elements in a stream as they pass through without changing the stream's behavior or output.
+It's mostly used for debugging and logging purposes. The forEach() method is used to perform some operation on each element of the stream.
+It's used when you want to perform some side-effect operation (such as printing, logging or writing to a file) for each element in the stream.
+
+Collectors class vs Collector interface
+java.util.stream.Collectors is a class in the Java standard library that provides a collection of static utility methods for working with Java streams.
+These utility methods typically return a java.util.stream.Collector instance, which is an interface that defines the process of combining the elements of a stream into a result container.
+So, java.util.stream.Collector is actually the interface that defines the type of object that can be used to accumulate the result of a stream operation into a final object.
+On the other hand, java.util.stream.Collectors provides a set of predefined collectors to perform common mutable reduction tasks on elements of a stream.
