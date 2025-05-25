@@ -10,8 +10,8 @@ public record CarRecord(String model, int wheels) { }
 
 // Records are immutable by default, meaning that once an object is created, its state/components cannot be changed.
 // it is possible to make a record mutable by declaring it with the "open" keyword instead of final. For example:
-// open record Person(String name, int age) { }
-// In this example, the open keyword is used to declare the Person record as mutable. This means that you can change the state of a Person instance after it is created.
+// open record Person(String name, int age) { } // =============================================================
+// In ABOVE example, the open keyword is used to declare the Person record as mutable. This means that you can change the state of a Person instance after it is created.
 // To modify the state of a mutable record instance, you can use its setter methods, which are automatically generated based on the components of the record. For example:
 // Person john = new Person("John", 25);
 // john = john.withAge(26);

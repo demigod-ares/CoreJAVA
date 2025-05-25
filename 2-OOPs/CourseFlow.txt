@@ -3,7 +3,7 @@ Record (Automated / Implicit POJO)
 Variable and methods
 Constructor (Polimorphism) this.something and this()
 Encapsulation (1 & 2)
-Inheritance (1 & 2) suer.something and super()
+Inheritance (1 & 2) super.variable, super.method() and super()
 this.something vs super.something
 this() vs super() for constructor chaining
 Composition

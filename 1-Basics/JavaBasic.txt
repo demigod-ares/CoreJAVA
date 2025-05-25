@@ -7,7 +7,7 @@ Java 17 - C:\Program Files\Java\jdk-17\bin\java.exe
 Go to JAVA PROJECTS at bottom of file explorer
 Right click on your project> configure class path > Configure JAVA runtime > Choose version
 
-0. Data types and Memory Space
+0. Data types and Memory Space (Stack, Heap and Metaspace)
 1. Basic
 2. Conditional
 3. Control Flow
@@ -16,6 +16,7 @@ Right click on your project> configure class path > Configure JAVA runtime > Cho
 6. Enum
 7. String (Read page 58 of the guide)
 8. Print Formatting / String Formatting
+8. String Builder / String Buffer
 9. Generics (POJO class + Abstract class + Array List Collection)
 10. AutoBoxUnboxEx (Need Generics)
 11. GenericsEx is Advanced Generics

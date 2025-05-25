@@ -57,7 +57,7 @@ public class StreamCollect {
     Map<String, Long> deptCountMap = empList.stream()
       .collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
     deptCountMap.entrySet().forEach(entry -> {
-      System.out.println(entry.getKey() + " count : " + entry.getValue());
+      System.out.println(entry.getKey() + " department employee count is : " + entry.getValue());
     });
     System.out.println("==================================");
 
@@ -92,6 +92,7 @@ public class StreamCollect {
       "Employee with min salary: " + minSalary +
       "\nEmployee with max salary: " + maxSalary
     );
+    System.out.println("==================================");
 
     // Department wise max salary
     Map<String, Optional<Employee>> maxSalaryMap = empList.stream()
@@ -102,6 +103,7 @@ public class StreamCollect {
         )
       );
     maxSalaryMap.entrySet().forEach(System.out::println);
+    System.out.println("==================================");
   }
 
 }
