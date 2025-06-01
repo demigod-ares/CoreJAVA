@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class StreamsIntermediate {
+public class StreamsIntro { // filter, map, reduce
     
     public static void main(String[] args) {
         List<Integer> intList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
@@ -24,8 +24,7 @@ public class StreamsIntermediate {
         int sumOfSquaresOfEvenNumbers = numbers.stream()
                                                 .filter(number -> number % 2 == 0)
                                                 .map(number -> number * number)
-                                                .reduce(0, (acc, number) -> acc + number);
+                                                .reduce(0, (acc, number) -> acc + number); // terminal method
         System.out.println(sumOfSquaresOfEvenNumbers); // Prints 20
-
-    } // Collect terminal method is a bit complex
+    }
 }

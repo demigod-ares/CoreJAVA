@@ -1,16 +1,12 @@
-What is a stream? Streams introduces Functional Programming in JAVA.
-A stream is a sequence of elements that can be processed in parallel or sequentially. It is a lightweight and efficient way to perform operations on collections of data.
+A stream is a sequence of elements that can be processed in parallel or sequentially. It is a lightweight and efficient way to perform operations on collections of data. Streams introduces Functional Programming in JAVA. Below are few advantages:
+1. Lazy Evaluation: Intermediate operations (like filter, map, sorted, distinct) are lazy. This means they are not executed immediately when called. Instead, they build a pipeline of operations. The actual processing only happens when a terminal operation (like collect, forEach, count, reduce, findFirst) is invoked. This "on-demand" processing can significantly improve performance, especially for large datasets or infinite streams, by avoiding unnecessary computations. For example, if you're looking for the first element that satisfies a condition, the stream can stop processing once it finds that element, even if there are millions more.
+2. Parallel Processing (Easy Parallelization): One of the most compelling advantages is the ability to easily parallelize data processing. By simply changing stream() to parallelStream(), you can often leverage multiple CPU cores to process data concurrently. The Stream API handles the complexities of thread management and synchronization internally, abstracting away the low-level details of parallel programming. This makes it much easier to write high-performance code for multi-core environments.
+3. Reduced Intermediate Variables: Traditional loop-based code often requires temporary variables to store intermediate results. Streams eliminate the need for many of these, reducing the chance of bugs related to mutable state.
+4. Pipelining and Composability: Stream operations can be chained together (pipelined) to form complex data processing workflows. Each intermediate operation returns a new stream, allowing for fluent and sequential application of transformations and filters. This composability makes it easy to build and combine various data processing steps.
 
-How to create a stream?
-You can create a stream from any collection in Java by calling the .stream() method on the collection. For example:
-
-Operations on streams
 Streams provide two types of operations: 
-1. intermediate operations 
-2. terminal operations.
-
-Intermediate operations return a new stream that can be used in a chain with other operations
-while terminal operations produce a result or a side effect.
+1. intermediate operations : return a new stream that can be used in a chained with other operations
+2. terminal operations : produce a result or a side effect
 
 Here are some examples of intermediate operations:
     filter(Predicate<T> predicate): filters the stream based on a predicate.
@@ -28,19 +24,21 @@ And here are some examples of terminal operations:
     reduce(): applies the BinaryOperator to the first two elements of the stream, then applies it to the result and the next element, and so on, until all elements are processed.
 
 peek() vs forEach()
-1. Execution Time:
-The peek() method is executed as an intermediate operation while the stream is being processed,
-whereas forEach() method is executed as a terminal operation after the stream processing is complete.
-2. Return Value:
-The peek() method returns a new stream containing the same elements as the original stream,
-while the forEach() method returns void.
-3. Functionality:
-The peek() method allows you to peek at the elements in a stream as they pass through without changing the stream's behavior or output.
-It's mostly used for debugging and logging purposes. The forEach() method is used to perform some operation on each element of the stream.
-It's used when you want to perform some side-effect operation (such as printing, logging or writing to a file) for each element in the stream.
+1. Execution Time: The peek() method is executed as an intermediate operation while the stream is being processed, whereas forEach() method is executed as a terminal operation after the stream processing is complete.
+2. Return Value: The peek() method returns a new stream containing the same elements as the original stream, while the forEach() method returns void.
+3. Functionality: The peek() method allows you to peek at the elements in a stream as they pass through without changing the stream's behavior or output. It's mostly used for debugging and logging purposes. The forEach() method is used to perform some operation on each element of the stream. It's used when you want to perform some side-effect operation (such as printing, logging or writing to a file) for each element in the stream.
 
 Collectors class vs Collector interface
-java.util.stream.Collectors is a class in the Java standard library that provides a collection of static utility methods for working with Java streams.
-These utility methods typically return a java.util.stream.Collector instance, which is an interface that defines the process of combining the elements of a stream into a result container.
-So, java.util.stream.Collector is actually the interface that defines the type of object that can be used to accumulate the result of a stream operation into a final object.
-On the other hand, java.util.stream.Collectors provides a set of predefined collectors to perform common mutable reduction tasks on elements of a stream.
+1. java.util.stream.Collectors is a class in the Java standard library that provides a collection of static utility methods for working with Java streams.
+2. These utility methods typically return a java.util.stream.Collector instance, which is an interface that defines the process of combining the elements of a stream into a result container.
+3. So, java.util.stream.Collector is actually the interface that defines the type of object that can be used to accumulate the result of a stream operation into a final object.
+4. On the other hand, java.util.stream.Collectors provides a set of predefined collectors to perform common mutable reduction tasks on elements of a stream.
+
+Use takeWhile() / dropWhile() when:
+1. You need to process (or discard) a prefix of an ordered stream based on a condition that eventually becomes false.
+2. Performance is critical, and you want to stop processing elements as soon as the condition is no longer met. This is especially true for very large or even infinite streams.
+3. The conceptual meaning is "take until" or "drop until."
+Use filter when:
+1. You need to select elements based on a condition, regardless of their position in the stream.
+2. The condition might be true or false randomly throughout the stream.
+3. You need to process all elements to decide which ones to keep.
