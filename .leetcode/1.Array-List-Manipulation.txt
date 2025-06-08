@@ -5,14 +5,13 @@
 283. Move Zeroes : Involves two-pointer technique but conceptually straightforward.
 448. Find All Numbers Disappeared in an Array : Uses in-place marking, requires understanding of array indexing tricks.
 219. Contains Duplicate II : Adds a sliding window constraint to the basic duplicate check.
-220. Contains Duplicate III (HARD!)
-More advanced due to the need for efficient range queries.
-73. Set Matrix Zeroes (Revisit for improvement)
-Requires careful in-place manipulation and tracking of rows/columns.
-141. Linked List cycle: 
+220. Contains Duplicate III (HARD!) : More advanced due to the need for efficient range queries.
+73. Set Matrix Zeroes (Revisit for improvement) : Requires careful in-place manipulation and tracking of rows/columns.
+141. Linked List cycle
 142. Linked List cycle Ⅱ  (Medium!) : Introduction to Floyd's Tortoise and Hare. (watch youtube)
 287. Find the Duplicate Number (Medium!) : Optimal solution uses cycle detection (Floyd's Tortoise and Hare), which is less intuitive.
-Product of Array Except Self : Requires prefix and suffix product arrays, and cannot use division.
-Top K Frequent Elements : Involves frequency counting and heap or bucket sort.
-3Sum : Classic medium difficulty, requires sorting and two-pointer approach.
-4Sum : Extension of 3Sum, higher complexity due to quadruplets and more nested loops.
+238. Product of Array Except Self : Requires prefix and suffix product arrays, and cannot use division.
+347. (Medium!) Top K Frequent Elements : Involves frequency counting and heap or bucket sort. Also, heap sort with PriorityQueue
+Queue<T> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+3Sum : (Medium!) Classic problem, requires sorting and two-pointer approach.
+4Sum : (HARD!) Extension of 3Sum, higher complexity due to quadruplets and more nested loops.
