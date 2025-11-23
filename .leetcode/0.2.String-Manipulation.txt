@@ -1,0 +1,15 @@
+1929. [NEET1] (Too easy) Concatenation of Array
+387. (Too easy - Frequency Map) First Unique Character in a String
+14. (Too easy) Longest Common Prefix
+38. Count and Say (Recursion - Fixed answer - poor explanation)
+30. Substring with Concatenation of All Words - (Medium) - Sliding Window combined with Two HashMaps (or a HashMap and a Counter/Frequency Array).
+242. [NEET1] Valid Anagram - Convert string into char array and compare
+49. [NEET1] (Medium) Group Anagrams - Canonical Key / Frequency Encoding. Convert each string into a unique, canonical representation (e.g., a sorted string or a delimited string of character counts like #1#0#2#...) and use this key to group strings in a hash map.
+271. [LOCKED, NEET1] Encode and Decode Strings
+
+=======================================================================================
+5 Longest Palindromic Substring — expand-around-center / DP
+125 Valid Palindrome — pointers + normalization
+3. Longest Substring Without Repeating Characters — Sliding Window + Hash Map (or Array). Use a window (left, right). Store character frequencies or the last seen index in a map. If a repeat is found, move left to one position past the last occurrence of the repeated character.
+76 Minimum Window Substring — Sliding Window + Two Hash Maps (or Counter Array). One map tracks character needs (t), and the other tracks character counts in the current window (s). Maintain a formed variable (number of matched character counts) to track when the window is valid.
+208 Implement Trie (Prefix Tree) — Node-based Tree Structure. Each node contains an array/map of pointers to child nodes (representing the next character) and a flag indicating if the node marks the end of a word.

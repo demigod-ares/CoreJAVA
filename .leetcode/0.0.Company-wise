@@ -1,0 +1,69 @@
+1. Google:
+
+Arrays & Two-pointers / Sorting
+1 Two Sum — Hash Map for $O(N)$ lookup. Store (value, index) pairs. For each element x, check if target - x is in the map.
+238 Product of Array Except Self — Left and Right Product Arrays. Calculate the product of elements to the left of i and the product of elements to the right of i. The result at i is Left[i-1] * Right[i+1].
+11 Container With Most Water — Two-Pointer (Greedy). Start pointers at the far ends. Move the pointer on the shorter height inwards, as moving the taller one guarantees no increase in height, but reduces the width.
+15 3Sum — Sorting + Two-Pointer. Sort the array first ($O(N \log N)$). Iterate with a primary pointer i. Use two internal pointers (left, right) to find pairs in the remaining array that sum to -nums[i]. Crucially, skip duplicates at all three pointers.
+27 Remove Element — in-place two-pointer
+88 Merge Sorted Array — merge in-place
+
+Strings & Tries
+3 Longest Substring Without Repeating Characters — Sliding Window + Hash Map (or Array). Use a window (left, right). Store character frequencies or the last seen index in a map. If a repeat is found, move left to one position past the last occurrence of the repeated character.
+76 Minimum Window Substring — Sliding Window + Two Hash Maps (or Counter Array). One map tracks character needs (t), and the other tracks character counts in the current window (s). Maintain a formed variable (number of matched character counts) to track when the window is valid.
+5 Longest Palindromic Substring — expand-around-center / DP
+125 Valid Palindrome — pointers + normalization
+49. Group Anagrams - Canonical Key / Frequency Encoding. Convert each string into a unique, canonical representation (e.g., a sorted string or a delimited string of character counts like #1#0#2#...) and use this key to group strings in a hash map.
+208 Implement Trie (Prefix Tree) — Node-based Tree Structure. Each node contains an array/map of pointers to child nodes (representing the next character) and a flag indicating if the node marks the end of a word.
+
+Linked Lists
+21 Merge Two Sorted Lists — dummy node merge
+206 Reverse Linked List — Iterative Pointer Swapping. Maintain three pointers: prev, current, and next. In each step, set current.next to prev, then advance prev and current.
+141 Linked List Cycle — Floyd’s Cycle-Finding Algorithm (Tortoise and Hare). Use two pointers: a slow pointer moves one step at a time, and a fast pointer moves two steps. If they ever meet, a cycle exists.
+25 Reverse Nodes in k-Group — pointer manipulation
+143 Reorder List — Split, Reverse, and Merge. 1. Find the middle node (using slow/fast pointers). 2. Reverse the second half of the list. 3. Merge the two lists by alternating nodes.
+
+Trees & Graphs
+94 Binary Tree Inorder Traversal — iterative/recursive
+100 Same Tree
+98 Validate Binary Search Tree — Recursive Range Check. Pass explicit lower and upper bounds (min, max) down the recursion. For the left child, update the max bound to the parent's value; for the right child, update the min bound.
+(GO to BFS/DFS basics below)
+236 Lowest Common Ancestor of a Binary Tree - Post-Order Traversal. Recursively check the left and right subtrees. The LCA is found when the current node is the root of the first subtree where the left call returns one target node, and the right call returns the other target node.
+297 Serialize and Deserialize Binary Tree - Pre-order Traversal (or BFS). Use a delimited string to store node values, including a sentinel value (e.g., "#") to mark null children. Deserialization uses a queue/index to rebuild the tree in the same traversal order.
+
+BFS/DFS basics
+200 Number of Islands - Iterative DFS or BFS. Iterate over the grid. When you find land ('1'), increment the island count and start a traversal (DFS/BFS) from that point to mark all connected land cells as visited ('0').
+133 Clone Graph
+207 Course Schedule
+
+Stacks, Queues & Heaps
+20 Valid Parentheses — Stack Matching. Push opening parentheses ((, {, [) onto the stack. When a closing parenthesis is encountered, check if the top of the stack matches its opening counterpart. If it does, pop; otherwise, it's invalid.
+146 LRU Cache — Hash Map + Doubly Linked List. The Hash Map provides $O(1)$ lookup for the key $\rightarrow$ node mapping. The Doubly Linked List maintains the order of usage (Most Recently Used at the head, Least Recently Used at the tail) and allows $O(1)$ node promotion/removal.
+703 Kth Largest Element in a Stream — min-heap
+253 Meeting Rooms II — Min-Heap (Priority Queue). The heap stores the end times of the meetings currently in progress. For each new meeting, check if its start time is after the earliest end time (heap peek). If so, update the room's end time (pop/push). The heap size represents the minimum number of rooms needed.
+
+Hashing & Searching
+49 Group Anagrams — canonical form or char-count hash
+560 Subarray Sum Equals K — prefix-sum + hashmap
+1 Two Sum (again) — hashing fundamentals
+
+Intervals & Greedy
+435 Non-overlapping Intervals — Greedy by End Time. Sort the intervals based on their end times. Iterate through the sorted intervals, always picking the one that finishes earliest, as this leaves the maximum amount of space for future non-overlapping intervals. Count the discarded intervals.
+252/253 (variants) Meeting Rooms / II
+
+Dynamic Programming
+53 Maximum Subarray — Kadane's Algorithm. Maintain two variables: current_max (max sum ending at the current position) and global_max (overall max sum found so far). current_max = max(nums[i], nums[i] + current_max).
+300 Longest Increasing Subsequence — DP + patience sorting
+72 Edit Distance — classic DP
+322 Coin Change — Bottom-Up DP. Use a DP array where dp[i] is the minimum number of coins needed to make amount i. dp[i] = min(dp[i], 1 + dp[i - coin]) for all available coins.
+
+Backtracking & Combinatorics
+39 Combination Sum — backtracking
+46 Permutations — DFS / swap
+
+Short study plan
+Master arrays/strings and two-pointer/sliding-window patterns first.
+Learn basic data structures: linked list, stack, queue, heap, trie.
+Trees/graphs: practice DFS/BFS, LCA, serialize/deserialize.
+Do interval/greedy and hashing problems next.
+Finish with DP and backtracking; practice clear explanations and trade-offs.

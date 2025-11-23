@@ -1,0 +1,21 @@
+1. [NEET1] Two Sum : Hash Map for $O(N)$ lookup. Store (value, index) pairs. For each element x, check if target - x is in the map.
+217. [NEET1] Contains Duplicate : Simple use of a set or sorting.
+349. Intersection of Two Arrays : Basic set intersection logic.
+350. Intersection of Two Arrays II : Slightly more complex than the first intersection problem, as it requires handling duplicate counts.
+283. Move Zeroes : Involves two-pointer technique but conceptually straightforward.
+11. Container With Most Water — Two-Pointer (Greedy). Start pointers at the far ends. Move the pointer on the shorter height inwards, as moving the taller one guarantees no increase in height, but reduces the width.
+88. Merge Sorted Array — merge in-place (3 pointers)
+448. Find All Numbers Disappeared in an Array : Uses in-place marking, requires understanding of array indexing tricks.
+27. Remove Element — in-place two-pointer
+219. Contains Duplicate II : Adds a sliding window constraint to the basic duplicate check.
+220. Contains Duplicate III (HARD!) : More advanced due to the need for efficient range queries.
+73. Set Matrix Zeroes (Revisit for improvement) : Requires careful in-place manipulation and tracking of rows/columns.
+141. Linked List cycle
+142. Linked List cycle Ⅱ  (Medium!) : Introduction to Floyd's Tortoise and Hare. (watch youtube)
+287. Find the Duplicate Number (Medium!) : Optimal solution uses cycle detection (Floyd's Tortoise and Hare), which is less intuitive.
+238. Product of Array Except Self : Left and Right Product Arrays, and cannot use division.
+347. [NEET1] (Medium) Top K Frequent Elements : Involves frequency counting and heap/bucket sort. Also, heap sort with PriorityQueue. -> Queue<T> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+=============================================================================================
+
+[]. 3Sum : (Medium!) Sorting + Two-Pointer. Sort the array first ($O(N \log N)$). Iterate with a primary pointer i. Use two internal pointers (left, right) to find pairs in the remaining array that sum to -nums[i]. Crucially, skip duplicates at all three pointers.
+[]. 4Sum : (HARD!) Extension of 3Sum, higher complexity due to quadruplets and more nested loops.
